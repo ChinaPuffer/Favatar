@@ -1,5 +1,10 @@
-Favatar online avatar generator
--------------------------------
+Favatar Generator
+-----------------
+
+**About this repo**
+
++ An HTML manga avatar generator. Idea borrowed from [Face Your Manga](http://www.faceyourmanga.com/).
+
 
 **Read the blog post**
 
