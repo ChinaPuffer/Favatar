@@ -79,6 +79,7 @@ h3 {
     height: 30px;
     width: 100px;
     margin: 0;
+    background: #f3a637;
     background: -webkit-linear-gradient(top, #fbc357, #ea8615);
     border: 1px solid #ea8615;
     border-color: #fbc357 #e5a65f #ea8615;
@@ -107,6 +108,7 @@ h3 {
 }
 
 #preview>h2:hover {
+    background: #f8c448;
     background: -webkit-linear-gradient(top, #fddd7a, #f4b01f);
 }
 
