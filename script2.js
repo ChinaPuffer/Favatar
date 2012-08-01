@@ -24,7 +24,6 @@ var Favatar = {
     layers: [],
     save: document.getElementById('save'),
     canvas: document.getElementById('canvas'),
-    context: this.canvas.getContext('2d'),
     categories: document.getElementById('categories'),
     components: document.getElementById('components'),
 
@@ -37,21 +36,21 @@ var Favatar = {
             category.dataset.i = idx;
             category.dataset.a = datum.amount;
             category.dataset.r = datum.required;
-            categories.appendChild(category);
+            that.categories.appendChild(category);
             that.thumbs[idx] = (datum.required == 'y') ? 1 : 0;
             that.layers[datum.index] = idx;
         });
-        that.renewal(categories.getElementsByTagName('span')[0]);
+        that.renewal(that.categories.getElementsByTagName('span')[0]);
         that.draw(that.layers);
-        categories.getElementsByTagName('span')[0].className = 'active';
-        categories.addEventListener('click', function(e) {
+        that.categories.getElementsByTagName('span')[0].className = 'active';
+        that.categories.addEventListener('click', function(e) {
             if(e.target.tagName.toLowerCase() == 'span') {
                 categories.getElementsByClassName('active')[0].className = '';
                 e.target.className = 'active';
                 that.renewal(e.target);
             }
         }, false);
-        components.addEventListener('click', function(e) {
+        that.components.addEventListener('click', function(e) {
             if(e.target.tagName.toLowerCase() == 'img') {
                 components.getElementsByClassName('active')[0].className = '';
                 e.target.className = 'active';
@@ -59,7 +58,7 @@ var Favatar = {
                 that.draw(that.layers);
             }
         }, false);
-        save.addEventListener('click', function(e) {
+        that.save.addEventListener('click', function(e) {
             window.open(that.canvas.toDataURL('image/png'));
         }, false);
     },
@@ -73,21 +72,21 @@ var Favatar = {
         if(parent.dataset.r == 'y') {
             component.style.display = 'none';
         }
-        components.innerHTML = '';
-        components.appendChild(component);
+        that.components.innerHTML = '';
+        that.components.appendChild(component);
         for(var i = 0; i < parseInt(parent.dataset.a); i++) {
             component = document.createElement('img');
             component.src = 'thumb/' + (parseInt(parent.dataset.i) + 10).toString(36) + (i + 1) + '.png';
             component.dataset.p = parent.dataset.i;
             component.dataset.n = i + 1;
-            components.appendChild(component);
+            that.components.appendChild(component);
         }
-        components.getElementsByTagName('img')[that.thumbs[parseInt(parent.dataset.i)]].className = 'active';
+        that.components.getElementsByTagName('img')[that.thumbs[parseInt(parent.dataset.i)]].className = 'active';
     },
 
     draw: function(arr) {
         var that = this;
-        var ctx = that.context;
+        var ctx = that.canvas.getContext('2d');
         var frame = function(i) {
             if(that.thumbs[arr[i]]) {
                 var img = new Image();
