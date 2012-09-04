@@ -1,4 +1,4 @@
-Favatar Generator 
+Favatar Generator
 -----------------
 
 **About this repo**
