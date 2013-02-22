@@ -59,8 +59,7 @@ var Favatar = {
             }
         }, false);
         that.save.addEventListener('click', function(e) {
-            //var url2 = that.canvas.toDataURL('image/png');
-            var url = that.canvas.toDataURL("image/png;base64;");
+            var url = that.canvas.toDataURL('image/png');
             that.save.setAttribute('download', 'favatar.png');
             that.save.setAttribute('href', url);
         }, false);
