@@ -74,7 +74,7 @@ h3 {
     top: 0;
 }
 
-#preview>h2 {
+#preview>a {
     display: block;
     height: 30px;
     width: 100px;
@@ -90,6 +90,7 @@ h3 {
     font-family: Questrial, sans-serif;
     font-size: 16px;
     text-align: center;
+    text-decoration: none;
     line-height: 30px;
     text-transform: uppercase;
     text-shadow: 0 1px 0 #777;
@@ -103,16 +104,16 @@ h3 {
     -webkit-transform: translateX(0);
 }
 
-#preview:hover>h2 {
+#preview:hover>a {
     top: 460px;
 }
 
-#preview>h2:hover {
+#preview>a:hover {
     background: #f8c448;
     background: -webkit-linear-gradient(top, #fddd7a, #f4b01f);
 }
 
-#preview>h2:active {
+#preview>a:active {
     -webkit-transform: translateY(2px);
 }
 
