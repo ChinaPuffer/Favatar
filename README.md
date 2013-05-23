@@ -13,5 +13,5 @@ Favatar Generator
 
 **Try out the demos**
 
-+ http://myst729.github.com/Favatar/favatar1.html
-+ http://myst729.github.com/Favatar/favatar2.html
++ http://myst729.github.io/Favatar/favatar1.html
++ http://myst729.github.io/Favatar/favatar2.html
