@@ -1,5 +1,5 @@
 Favatar Generator
------------------
+----------------
 
 **About this repo**
 
